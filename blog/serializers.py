@@ -1,40 +1,34 @@
 from rest_framework import serializers
-from .models import Profile,Category,Post,MenuItem,Document
-
-
+from .models import Profile, Category, Post, MenuItem, Document
 
 class ProfileSerializer(serializers.ModelSerializer):
-    class Meta :
+    class Meta:
         model = Profile
         fields = "__all__"
-        
-        
-class CategorySerrilizers(serializers.ModelSerializer):
-    class Meta :
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
         model = Category
         fields = ["id", "name", "slug"]
-        
-        
-class PostSerilizers(serializers.ModelSerializer):
-    class Meta :
+
+class PostListSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(read_only=True)
+    class Meta:
         model = Post
         fields = ["id", "title", "slug", "excerpt", "category", "created"]
 
-
-class MenuItemSerializers(serializers.ModelSerializer):
-    class Meta :
-        model = MenuItem
+class PostDetailSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(read_only=True)
+    class Meta:
+        model = Post
         fields = "__all__"
-        
 
-class MenuItemSerilizers(serializers.ModelSerializer):
-    class Meta :
-        model =MenuItem
+class MenuItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MenuItem
         fields = ["label", "url", "order"]
-        
-        
-class DocumentSerilizers(serializers.ModelSerializer):
-    class Meta :
+
+class DocumentSerializer(serializers.ModelSerializer):
+    class Meta:
         model = Document
         fields = ["id", "title", "file", "uploaded_at"]
-        
