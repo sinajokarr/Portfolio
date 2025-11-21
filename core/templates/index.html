@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sina Jokar | Backend Architect</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <header class="hero-section">
+            
+            <div class="hero-content">
+                <p class="role-tag">BACKEND ENGINEER & ARCHITECT</p>
+                <h1 class="main-title">
+                    SINA<br>
+                    <span class="outline-text">JOKAR</span>
+                </h1>
+                
+                <div class="social-links">
+                    <p class="social-label">On Social Networks</p>
+                    <div class="icons">
+                        <a href="https://www.linkedin.com/in/sinajokar/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sinajokarr" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:cnajokar11@yahoo.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="bloom-container">
+                    <img src="{% static 'img/sina.jpg' %}" alt="Sina Jokar" class="bloom-image">
+                    
+                    <div class="bloom-grid">
+                        <div class="cell corner"></div>
+                        <div class="cell top"></div>
+                        <div class="cell corner"></div>
+                        
+                        <div class="cell left"></div>
+                        <div class="cell center"></div> <div class="cell right"></div>
+                        
+                        <div class="cell corner"></div>
+                        <div class="cell bottom"></div>
+                        <div class="cell corner"></div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <section class="section timeline">
+            <div class="section-header">
+                <h2 class="section-title">WORKING PERIOD</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="timeline-rows">
+                <div class="row">
+                    <span class="date">2024 - Present</span>
+                    <span class="role">Backend Developer</span>
+                    <span class="comp">Freelance & Open Source</span>
+                </div>
+                <div class="row">
+                    <span class="date">2023 - 2024</span>
+                    <span class="role">Django Developer</span>
+                    <span class="comp">Real-Estate Platform</span>
+                </div>
+                <div class="row">
+                    <span class="date">2022 - 2023</span>
+                    <span class="role">Python Programmer</span>
+                    <span class="comp">Self-Taught & Tutoring</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills">
+            <div class="section-header center">
+                <h2 class="section-title">MY ADVANTAGE</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <i class="fab fa-python" style="color:#3776AB"></i>
+                    <h3>95%</h3>
+                    <p>PYTHON</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-layer-group" style="color:#092E20"></i>
+                    <h3>90%</h3>
+                    <p>DJANGO</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-database" style="color:#336791"></i>
+                    <h3>85%</h3>
+                    <p>POSTGRESQL</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-docker" style="color:#2496ED"></i>
+                    <h3>80%</h3>
+                    <p>DOCKER</p>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-bolt" style="color:#009688"></i>
+                    <h3>75%</h3>
+                    <p>FASTAPI</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div class="contact-layout">
+                <div class="contact-title">
+                    <h2>START<br>PROJECTS?</h2>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <p class="form-label">Let's Get In Touch With Us</p>
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" placeholder="How We Can Help You?" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Sina Jokar © 2025. Backend Architect Portfolio.</p>
+        </footer>
+
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
