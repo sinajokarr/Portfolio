@@ -164,8 +164,3 @@ Feel free to check the [issues page](https://www.google.com/url?sa=E&source=gmai
 4.  Push to the Branch (`git push origin feature/AmazingFeature`)
 5.  Open a Pull Request
 
------
-
-\<div align="center"\>
-\<p\>Built with ❤️ and Python by Sina Jokar\</p\>
-\</div\>
