@@ -15,10 +15,5 @@
       "src": "/(.*)",
       "dest": "core/wsgi.py"
     }
-  ],
-  "build": {
-    "env": {
-      "PYTHON_VERSION": "3.12"
-    }
-  }
+  ]
 }
