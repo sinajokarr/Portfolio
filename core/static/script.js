@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation for elements appearing on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -17,24 +16,62 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Simple Form Handler UI
     const contactForm = document.getElementById('contactForm');
+    
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
             const btn = document.querySelector('.btn-submit');
             const originalText = btn.innerText;
-            btn.innerText = "SENDING...";
+            const originalBg = window.getComputedStyle(btn).backgroundColor;
             
-            setTimeout(() => {
-                btn.style.background = "#10b981";
-                btn.innerText = "SENT SUCCESSFULLY";
-                contactForm.reset();
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const messageField = document.getElementById('message');
+
+            if (!nameField || !emailField || !messageField) {
+                console.error("DOM Error: Missing input IDs.");
+                return;
+            }
+
+            btn.innerText = "SENDING...";
+            btn.disabled = true;
+            btn.style.cursor = "not-allowed";
+            
+            try {
+                const response = await fetch('/blog/contact/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        name: nameField.value, 
+                        email: emailField.value, 
+                        message: messageField.value 
+                    })
+                });
+
+                if (response.ok) {
+                    btn.style.background = "#10b981";
+                    btn.innerText = "SENT SUCCESSFULLY";
+                    contactForm.reset();
+                } else {
+                    throw new Error(`Server Response: ${response.status}`);
+                }
+                
+            } catch (error) {
+                console.error('Submission Error:', error);
+                btn.style.background = "#ef4444";
+                btn.innerText = "FAILED TO SEND";
+            } finally {
                 setTimeout(() => {
-                    btn.style.background = "#2563eb";
+                    btn.style.background = originalBg;
                     btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.cursor = "pointer";
                 }, 3000);
-            }, 1500);
+            }
         });
     }
 });

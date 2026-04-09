@@ -1,7 +1,13 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python
 __pycache__/
 *.py[cod]
-db.sqlite3
-.env
-*.log
-media/
-staticfiles/
+
+# Database
+db.sqlite3ç
